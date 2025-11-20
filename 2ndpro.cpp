@@ -12,6 +12,7 @@ private:
     static int trainCount;
 
 public:
+    // Default Constructor
     Train() {
         trainNumber = 0;
         strcpy(trainName, "");
@@ -21,6 +22,7 @@ public:
         trainCount++;
     }
 
+    // Parameterized Constructor
     Train(int num, const char* name, const char* src, const char* dest, const char* time) {
         trainNumber = num;
         strcpy(trainName, name);
@@ -30,6 +32,7 @@ public:
         trainCount++;
     }
 
+    // Getter methods
     int getTrainNumber() {
         return trainNumber;
     }
@@ -50,8 +53,9 @@ public:
         return trainTime;
     }
 
+    // Input train details from user
     void inputTrainDetails() {
-        cout << "\nEnter the Train Details:\n";
+        cout << "\nEnter Train Details:\n";
         cout << "Train Number: ";
         cin >> trainNumber;
         cin.ignore(); // 
@@ -94,7 +98,7 @@ int main() {
     Train train1;
     train1.inputTrainDetails();
     
-    Train train2(12355, "Rajdhani Express", "Delhi", "Mumbai", "16:30");
+    Train train2(12345, "Rajdhani Express", "Delhi", "Mumbai", "16:30");
     
     cout << "\n=== all train in display===\n";
     train1.displayTrainDetails();
